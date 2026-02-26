@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 12px 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: yellow;
+        }
+
+        /* Mobile Menu Button */
+        .menu {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 150px;
+                padding: 10px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">MySite</div>
+
+        <div class="menu" onclick="toggleMenu()">☰</div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("show");
+        }
+    </script>
+
+</body>
+</html>
